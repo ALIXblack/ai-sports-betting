@@ -27,12 +27,33 @@ def get_domestic_data():
     print("正在连接竞彩官方API获取数据...")
     
     headers = {
-        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+        "Referer": "https://www.sporttery.cn/",
+        "Origin": "https://www.sporttery.cn",
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+        "X-Requested-With": "XMLHttpRequest",
+        "sec-ch-ua": '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
+        "sec-ch-ua-mobile": "?0",
+        "sec-ch-ua-platform": '"Windows"'
     }
 
-    try:
+try:
         response = requests.get(DATA_API_URL, headers=headers, timeout=15)
-        raw_data = response.json()
+        
+        # --- 照妖镜开始 ---
+        print(f"HTTP状态码: {response.status_code}")
+        # 如果不是200，说明被拦截了
+        if response.status_code != 200:
+            print(f"被拦截了！返回内容首部: {response.text[:200]}")
+            return []
+        
+        # 尝试打印前50个字符，看看到底是不是JSON开头（JSON通常以 { 或 [ 开头）
+        print(f"返回内容预览: {response.text[:50]}...")
+        # --- 照妖镜结束 ---
+
+        raw_data = response.json() 
+        # ... 后面的代码不变 ...
         
         # 调试打印：把API返回的前200个字打出来，确认真的拿到数据了
         print(f"API 响应状态: {raw_data.get('errorMessage', '无消息')}")

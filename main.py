@@ -22,42 +22,38 @@ DATA_API_URL = "https://webapi.sporttery.cn/gateway/uniform/football/getMatchCal
 
 def get_domestic_data():
     """
-    【修复版】强力提取数据，不挑食模式
+    【修复 + 调试版】包含完整伪装头和调试信息的抓取函数
     """
     print("正在连接竞彩官方API获取数据...")
     
+    # 伪装成国内 Chrome 浏览器
     headers = {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
         "Referer": "https://www.sporttery.cn/",
         "Origin": "https://www.sporttery.cn",
         "Accept": "application/json, text/javascript, */*; q=0.01",
         "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
-        "X-Requested-With": "XMLHttpRequest",
-        "sec-ch-ua": '"Not_A Brand";v="8", "Chromium";v="120", "Google Chrome";v="120"',
-        "sec-ch-ua-mobile": "?0",
-        "sec-ch-ua-platform": '"Windows"'
+        "X-Requested-With": "XMLHttpRequest"
     }
 
-try:
+    try:
+        # 发起请求
         response = requests.get(DATA_API_URL, headers=headers, timeout=15)
         
-        # --- 照妖镜开始 ---
+        # --- 调试代码：查看到底返回了什么状态 ---
         print(f"HTTP状态码: {response.status_code}")
-        # 如果不是200，说明被拦截了
+        
         if response.status_code != 200:
-            print(f"被拦截了！返回内容首部: {response.text[:200]}")
+            print(f"被拦截！错误信息前200字: {response.text[:200]}")
+            # 如果是403，说明被禁了，直接返回空
             return []
-        
-        # 尝试打印前50个字符，看看到底是不是JSON开头（JSON通常以 { 或 [ 开头）
+            
+        # 尝试查看返回内容的前50个字符（看看是不是 { 开头的）
         print(f"返回内容预览: {response.text[:50]}...")
-        # --- 照妖镜结束 ---
+        # ------------------------------------
 
-        raw_data = response.json() 
-        # ... 后面的代码不变 ...
+        raw_data = response.json()
         
-        # 调试打印：把API返回的前200个字打出来，确认真的拿到数据了
-        print(f"API 响应状态: {raw_data.get('errorMessage', '无消息')}")
-
         clean_matches = []
         
         # 暴力穿透：直接找所有列表
@@ -66,21 +62,14 @@ try:
         for group in match_groups:
             sub_list = group.get('subMatchList', [])
             for m in sub_list:
-                # 1. 既然是预测，如果没有胜平负(had)赔率，我们尝试拿不让球赔率
-                # 有时候数据里 key 叫 had, 有时候可能有变体，这里做多重防护
+                # 尝试提取赔率
                 odds = m.get('had', {})
-                
-                # 如果 odds 是空的，或者里面全是空字符串，说明没开盘
-                if not odds or odds == {}:
-                    # 为了测试，哪怕没赔率也先把比赛抓下来看看！
-                    h_odd = "未开售"
+                if not odds or isinstance(odds, str):
+                    h_odd, d_odd, a_odd = "-", "-", "-"
                 else:
-                    h_odd = odds.get('h', '0')
-
-                # 2. 只有当比赛状态是 Selling (销售中) 才提取
-                # (如果你想看所有比赛，把下面这行 if 注释掉)
-                # if m.get('matchStatus') != 'Selling':
-                #    continue
+                    h_odd = odds.get('h', '-')
+                    d_odd = odds.get('d', '-')
+                    a_odd = odds.get('a', '-')
 
                 match_item = {
                     "league": m.get('leagueAbbName', m.get('leagueAllName', '未知联赛')),
@@ -88,23 +77,21 @@ try:
                     "home": m.get('homeTeamAbbName', m.get('homeTeamAllName', '主队')),
                     "away": m.get('awayTeamAbbName', m.get('awayTeamAllName', '客队')),
                     "odds": {
-                        "主胜": odds.get('h', '-'),
-                        "平": odds.get('d', '-'),
-                        "客胜": odds.get('a', '-')
+                        "主胜": h_odd,
+                        "平": d_odd,
+                        "客胜": a_odd
                     }
                 }
                 clean_matches.append(match_item)
 
-        print(f"========================================")
         print(f"【调试信息】共提取到 {len(clean_matches)} 场比赛")
-        if len(clean_matches) > 0:
-            print(f"第一场数据示例: {clean_matches[0]}")
-        print(f"========================================")
-        
         return clean_matches
 
     except Exception as e:
-        print(f"严重错误: 解析数据时崩溃 - {e}")
+        print(f"严重错误 - 数据解析失败: {e}")
+        # 这里打印出错误的堆栈，方便排查
+        import traceback
+        traceback.print_exc()
         return []
 
 def search_injury_news(home_team, away_team):

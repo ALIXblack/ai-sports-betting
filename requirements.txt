@@ -1,2 +1,3 @@
 requests
 duckduckgo-search
+typing_extensions>=4.10.0

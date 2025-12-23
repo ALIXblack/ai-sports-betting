@@ -1,0 +1,45 @@
+name: Hourly Betting Prediction
+
+on:
+  schedule:
+    # 这里的 cron 语法代表：每小时的第0分钟执行
+    # 注意：GitHub Actions 的时间是 UTC 时间
+    - cron: '0 * * * *'
+  # 同时也允许你手动点按钮触发（方便测试）
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+
+    - name: Run Prediction Script
+      env:
+        # 这里把我们在 Settings 里填的密钥注入给代码
+        ODDS_KEY: ${{ secrets.ODDS_KEY }}
+        GEMINI_KEY: ${{ secrets.GEMINI_KEY }}
+      run: python main.py
+
+    - name: Commit and Push results
+      run: |
+        git config --global user.name "AI-Bot"
+        git config --global user.email "ai-bot@prediction.com"
+        # 只有当 result.json 发生变化时才提交
+        git add result.json
+        git commit -m "Auto-update prediction results" || echo "No changes to commit"
+        git push

@@ -6,182 +6,219 @@ from datetime import datetime
 from duckduckgo_search import DDGS
 
 # ================= 配置区域 =================
-# 1. 从 Github Secrets 获取 Key
-ODDS_API_KEY = os.environ.get("ODDS_KEY")     # 这里是你的国内API Key
-GEMINI_API_KEY = os.environ.get("GEMINI_KEY") # 这里是你的 Yunwu.ai Key
 
-# 2. 代理设置
-PROXY_URL = "https://yunwu.ai/v1/chat/completions" # 通常代理都用这个OpenAI兼容路径
+# 1. 密钥配置
+# 对于这个特定的API，其实不需要ODDS_KEY，但为了保持结构我们留着
+GEMINI_API_KEY = os.environ.get("GEMINI_KEY")
+
+# 2. 代理与模型设置 (Yunwu.ai)
+PROXY_URL = "https://yunwu.ai/v1/chat/completions"
 MODEL_NAME = "gemini-3-pro-preview"
+
+# 3. 数据源地址 (竞彩官方接口)
+DATA_API_URL = "https://webapi.sporttery.cn/gateway/uniform/football/getMatchCalculatorV1.qry?channel=c&poolCode=had"
 
 # ================= 功能函数 =================
 
 def get_domestic_data():
     """
-    【请修改这里】获取国内 API 的实时盘口数据
+    从竞彩官方API获取数据，并清洗为 AI 可读的标准格式
     """
-    print("正在从国内接口获取比赛数据...")
+    print("正在连接竞彩官方API获取数据...")
     
-    # ------------------------------------------------------------------
-    # TODO: 请在这个位置替换为你真实的国内 API 调用代码
-    # 示例代码（假设你的国内API是这个格式，请根据实际情况修改 URL 和参数）：
-    # url = "http://api.tuijian.com/matches/today"
-    # params = {"key": ODDS_API_KEY, "league": "Premier League"}
-    # response = requests.get(url, params=params)
-    # return response.json() 
-    # ------------------------------------------------------------------
-    
-    # !!! 假如你还没填写真实API，为了防止报错，我这里先模拟一条假数据供测试 !!!
-    # 当你接入真实API后，请删除下面的模拟数据
-    mock_data = [
-        {
-            "league": "英超",
-            "match_time": "2024-05-20 22:00",
-            "home_team": "曼城",
-            "away_team": "西汉姆联",
-            "odds": {"胜": 1.15, "平": 8.00, "负": 15.00}
-        },
-        {
-            "league": "中超",
-            "match_time": "2024-05-20 19:35",
-            "home_team": "上海海港",
-            "away_team": "成都蓉城",
-            "odds": {"胜": 1.65, "平": 3.80, "负": 4.50}
-        }
-    ]
-    return mock_data
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+
+    try:
+        response = requests.get(DATA_API_URL, headers=headers, timeout=10)
+        response.raise_for_status()
+        raw_data = response.json()
+        
+        # 1. 检查 API 是否成功
+        if not raw_data.get('success'):
+            print("API 返回错误:", raw_data.get('errorMessage'))
+            return []
+
+        clean_matches = []
+        
+        # 2. 解析复杂的嵌套结构
+        # 结构：value -> matchInfoList (按日期分组) -> subMatchList (比赛列表)
+        match_groups = raw_data.get('value', {}).get('matchInfoList', [])
+        
+        for group in match_groups:
+            sub_list = group.get('subMatchList', [])
+            
+            for m in sub_list:
+                # 3. 提取核心字段
+                league = m.get('leagueAllName', '未知联赛')
+                match_time = f"{m.get('matchDate')} {m.get('matchTime')}"
+                home_team = m.get('homeTeamAllName', '主队')
+                away_team = m.get('awayTeamAllName', '客队')
+                
+                # 4. 提取赔率 (字段名为 had)
+                # had 结构: {'h': '1.37', 'd': '4.05', 'a': '6.70'}，代表 主胜/平/客胜
+                odds_info = m.get('had', {})
+                
+                # 如果这场比赛没有开售胜平负(had为空)，则跳过
+                if not odds_info or not odds_info.get('h'):
+                    continue
+
+                # 整理好的单场数据
+                match_item = {
+                    "league": league,
+                    "time": match_time,
+                    "home": home_team,
+                    "away": away_team,
+                    "odds": {
+                        "主胜": odds_info.get('h'),
+                        "平": odds_info.get('d'),
+                        "客胜": odds_info.get('a')
+                    }
+                }
+                clean_matches.append(match_item)
+
+        print(f"成功获取并清洗了 {len(clean_matches)} 场比赛数据。")
+        return clean_matches
+
+    except Exception as e:
+        print(f"获取数据失败: {e}")
+        return []
 
 def search_injury_news(home_team, away_team):
     """
-    利用 DuckDuckGo 搜索两队的最新伤病名单
+    DuckDuckGo 搜索两队的最新伤病/新闻
     """
-    print(f"正在搜索伤病信息: {home_team} vs {away_team} ...")
-    search_query = f"{home_team} vs {away_team} 伤病名单 缺席球员 最新新闻"
+    print(f"正在搜索情报: {home_team} vs {away_team} ...")
+    # 构造搜索词，增加"足球"关键词提高准确度
+    query = f"{home_team} vs {away_team} 预测 伤病 缺席 首发 足球"
     news_summary = ""
     
     try:
-        # 使用 DDGS 进行搜索 (max_results控制搜索条数，避免超时)
-        results = DDGS().text(search_query, max_results=3)
+        # max_results=2 稍微减少一点，提高速度
+        results = DDGS().text(query, max_results=2)
         if results:
             for r in results:
                 news_summary += f"- {r['title']}: {r['body']}\n"
         else:
-            news_summary = "未搜索到相关具体的即时伤病新闻。"
+            news_summary = "暂无具体即时伤病新闻。"
     except Exception as e:
-        print(f"搜索出错: {e}")
-        news_summary = "搜索服务暂时不可用。"
+        print(f"搜索服务跳过: {e}")
+        news_summary = "搜索暂不可用。"
         
     return news_summary
 
 def call_gemini_proxy(prompt):
     """
-    通过 Yunwu.ai 代理调用 Gemini-3
+    调用 Yunwu.ai (Gemini-3)
     """
     headers = {
         "Authorization": f"Bearer {GEMINI_API_KEY}",
         "Content-Type": "application/json"
     }
     
-    # 构造 OpenAI 兼容格式的消息体
     payload = {
         "model": MODEL_NAME,
         "messages": [
-            {"role": "system", "content": "你是一个专业的体育赛事精算师。请直接输出JSON格式结果。"},
-            {"role": "user", "content": prompt}
+            {
+                "role": "system", 
+                "content": "你是一个专业的足球赛事精算师。你的任务是基于赔率和基本面新闻预测赛果。请务必输出合法的JSON格式。"
+            },
+            {
+                "role": "user", 
+                "content": prompt
+            }
         ],
-        "temperature": 0.7
+        "temperature": 0.5 # 稍微降低温度，让预测更理性
     }
     
     try:
-        response = requests.post(PROXY_URL, headers=headers, json=payload, timeout=60)
+        response = requests.post(PROXY_URL, headers=headers, json=payload, timeout=50)
         
         if response.status_code == 200:
             result = response.json()
-            # 提取回复内容
             content = result['choices'][0]['message']['content']
-            # 清洗一下 markdown 格式
+            # 清洗 markdown 代码块符号
             clean_content = content.replace("```json", "").replace("```", "").strip()
             return json.loads(clean_content)
         else:
-            print(f"AI 请求失败: {response.status_code} - {response.text}")
-            return {"error": "AI Service Unreachable"}
+            print(f"AIAPI Error: {response.text}")
+            return {"error": "AI调用失败", "details": response.text}
             
     except Exception as e:
-        print(f"AI 连接异常: {e}")
+        print(f"AI Net Error: {e}")
         return {"error": str(e)}
 
 # ================= 主程序 =================
 
 def main():
-    # 1. 获取比赛列表
+    # 1. 抓取真实数据
     matches = get_domestic_data()
     
     if not matches:
-        print("今日无比赛数据或API调用失败")
+        print("没有获取到比赛数据，结束任务。")
         return
 
     predictions_list = []
+    
+    # 2. 遍历比赛 (控制数量，防止超时)
+    # 每次运行处理前 6 场比赛。
+    # 如果你想处理更多，请修改 [:6] 为 [:10] 或者直接去掉切片
+    target_matches = matches[:6]
 
-    # 2. 循环处理每场比赛 (为了演示稳定，这里只取前3场，你可以去掉 [:3])
-    # 实际生产中建议每次处理 5-10 场，避免超时
-    for match in matches[:5]: 
-        home = match.get('home_team')
-        away = match.get('away_team')
+    for match in target_matches:
+        home = match['home']
+        away = match['away']
         
-        # 3. 实时搜索伤病
+        # 3. 搜索新闻
         news = search_injury_news(home, away)
         
-        # 4. 组装给 AI 的 Prompt
+        # 4. 构造 Prompt
         prompt = f"""
-        【比赛信息】
-        赛事：{match.get('league')}
-        时间：{match.get('match_time')}
+        【赛事数据】
+        联赛：{match['league']}
+        时间：{match['time']}
         对阵：{home} (主) vs {away} (客)
-        盘口数据：{json.dumps(match.get('odds'), ensure_ascii=False)}
+        官方竞彩赔率：{json.dumps(match['odds'], ensure_ascii=False)}
         
-        【网络搜索到的最新情报/伤病】
+        【网络搜索情报】
         {news}
         
-        【任务】
-        请根据盘口赔率和最新的伤病情报，预测本场比赛的胜平负。
+        【预测任务】
+        请结合上述赔率（注意：1.x通常代表强队，高赔率代表弱队）和情报，预测比赛结果。
         
-        【必须输出格式】
-        请仅返回一个 JSON 对象，格式如下：
+        【输出格式要求】
+        请仅返回一个JSON对象（不要列表，不要Markdown），包含以下字段：
         {{
             "match": "{home} vs {away}",
-            "prediction_result": "主胜/平/客胜",
-            "win_probability": "XX%",
-            "analysis": "请用200字左右分析理由"
+            "prediction_result": "主胜 / 平 / 客胜",
+            "win_probability": "胜率数值（例如 75%）",
+            "score_prediction": "预测比分（例如 2:1）",
+            "analysis": "简短分析（50字以内）"
         }}
         """
         
-        # 5. 调用 AI
-        print(f"正在请求 AI 预测: {home} vs {away}...")
+        print(f"AI 正在思考: {home} vs {away}...")
         ai_result = call_gemini_proxy(prompt)
         
-        # 容错处理：如果AI返回列表或其他结构，统一放到列表里
-        if isinstance(ai_result, list):
-            predictions_list.extend(ai_result)
-        else:
+        if ai_result:
             predictions_list.append(ai_result)
-            
-        # 稍微暂停一下，防止并发太快被封
+        
+        # 休息 2 秒用于防封
         time.sleep(2)
 
-    # 6. 生成最终结果
+    # 5. 保存结果
     final_output = {
         "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "model_used": MODEL_NAME,
+        "source": "Sporttery Official + Gemini 3 Pro + DuckDuckGo",
+        "total_matches_found": len(matches),
         "results": predictions_list
     }
     
-    # 7. 写入 result.json
     with open("result.json", "w", encoding='utf-8') as f:
         json.dump(final_output, f, ensure_ascii=False, indent=4)
         
-    print("====================================")
-    print("所有预测已完成，结果已保存至 result.json")
-    print("====================================")
+    print("任务全部完成，结果已保存。")
 
 if __name__ == "__main__":
     main()

@@ -22,7 +22,7 @@ DATA_API_URL = "https://webapi.sporttery.cn/gateway/uniform/football/getMatchCal
 
 def get_domestic_data():
     """
-    从竞彩官方API获取数据，并清洗为 AI 可读的标准格式
+    【修复版】强力提取数据，不挑食模式
     """
     print("正在连接竞彩官方API获取数据...")
     
@@ -31,58 +31,59 @@ def get_domestic_data():
     }
 
     try:
-        response = requests.get(DATA_API_URL, headers=headers, timeout=10)
-        response.raise_for_status()
+        response = requests.get(DATA_API_URL, headers=headers, timeout=15)
         raw_data = response.json()
         
-        # 1. 检查 API 是否成功
-        if not raw_data.get('success'):
-            print("API 返回错误:", raw_data.get('errorMessage'))
-            return []
+        # 调试打印：把API返回的前200个字打出来，确认真的拿到数据了
+        print(f"API 响应状态: {raw_data.get('errorMessage', '无消息')}")
 
         clean_matches = []
         
-        # 2. 解析复杂的嵌套结构
-        # 结构：value -> matchInfoList (按日期分组) -> subMatchList (比赛列表)
+        # 暴力穿透：直接找所有列表
         match_groups = raw_data.get('value', {}).get('matchInfoList', [])
         
         for group in match_groups:
             sub_list = group.get('subMatchList', [])
-            
             for m in sub_list:
-                # 3. 提取核心字段
-                league = m.get('leagueAllName', '未知联赛')
-                match_time = f"{m.get('matchDate')} {m.get('matchTime')}"
-                home_team = m.get('homeTeamAllName', '主队')
-                away_team = m.get('awayTeamAllName', '客队')
+                # 1. 既然是预测，如果没有胜平负(had)赔率，我们尝试拿不让球赔率
+                # 有时候数据里 key 叫 had, 有时候可能有变体，这里做多重防护
+                odds = m.get('had', {})
                 
-                # 4. 提取赔率 (字段名为 had)
-                # had 结构: {'h': '1.37', 'd': '4.05', 'a': '6.70'}，代表 主胜/平/客胜
-                odds_info = m.get('had', {})
-                
-                # 如果这场比赛没有开售胜平负(had为空)，则跳过
-                if not odds_info or not odds_info.get('h'):
-                    continue
+                # 如果 odds 是空的，或者里面全是空字符串，说明没开盘
+                if not odds or odds == {}:
+                    # 为了测试，哪怕没赔率也先把比赛抓下来看看！
+                    h_odd = "未开售"
+                else:
+                    h_odd = odds.get('h', '0')
 
-                # 整理好的单场数据
+                # 2. 只有当比赛状态是 Selling (销售中) 才提取
+                # (如果你想看所有比赛，把下面这行 if 注释掉)
+                # if m.get('matchStatus') != 'Selling':
+                #    continue
+
                 match_item = {
-                    "league": league,
-                    "time": match_time,
-                    "home": home_team,
-                    "away": away_team,
+                    "league": m.get('leagueAbbName', m.get('leagueAllName', '未知联赛')),
+                    "time": f"{m.get('matchDate')} {m.get('matchTime')}",
+                    "home": m.get('homeTeamAbbName', m.get('homeTeamAllName', '主队')),
+                    "away": m.get('awayTeamAbbName', m.get('awayTeamAllName', '客队')),
                     "odds": {
-                        "主胜": odds_info.get('h'),
-                        "平": odds_info.get('d'),
-                        "客胜": odds_info.get('a')
+                        "主胜": odds.get('h', '-'),
+                        "平": odds.get('d', '-'),
+                        "客胜": odds.get('a', '-')
                     }
                 }
                 clean_matches.append(match_item)
 
-        print(f"成功获取并清洗了 {len(clean_matches)} 场比赛数据。")
+        print(f"========================================")
+        print(f"【调试信息】共提取到 {len(clean_matches)} 场比赛")
+        if len(clean_matches) > 0:
+            print(f"第一场数据示例: {clean_matches[0]}")
+        print(f"========================================")
+        
         return clean_matches
 
     except Exception as e:
-        print(f"获取数据失败: {e}")
+        print(f"严重错误: 解析数据时崩溃 - {e}")
         return []
 
 def search_injury_news(home_team, away_team):

@@ -2,161 +2,177 @@ import os
 import requests
 import json
 import time
+import random
 from datetime import datetime
 from duckduckgo_search import DDGS
 
 # ================= 配置区域 =================
 
-# 1. 密钥读取 (从 Secrets 读取，安全！)
-# 只要你在第一步更新了ODDS_KEY，这里会自动读到新的 2a5c...
 ODDS_API_KEY = os.environ.get("ODDS_KEY")
 GEMINI_API_KEY = os.environ.get("GEMINI_KEY")
 
-# 2. 代理与模型设置 (Yunwu.ai)
 PROXY_URL = "https://yunwu.ai/v1/chat/completions"
 MODEL_NAME = "gemini-3-pro-preview"
+
+# 【核心升级1】主流赛事白名单
+# 只有包含以下关键词的联赛才会被处理。
+# 你可以根据需要添加：'Chinese' (中超), 'J League' (日职联), 'Champions' (欧冠)
+TARGET_KEYWORDS = [
+    "NBA", 
+    "Premier League",   # 英超
+    "La Liga",          # 西甲
+    "Bundesliga",       # 德甲
+    "Serie A",          # 意甲
+    "Ligue 1",          # 法甲
+    "Chinese Super",    # 中超
+    "Champions League", # 欧冠/亚冠
+    "EuroLeague",       # 欧篮
+    "Africa Cup"        # 非洲杯 (当前热门)
+]
 
 # ================= 功能函数 =================
 
 def get_odds_data():
     """
-    调用 The Odds API 获取即将开始的比赛 (足球+NBA)
-    文档参考: https://the-odds-api.com/live-api/guides/v4/
+    获取数据并进行白名单筛选
     """
-    print("正在连接 The Odds API (Global)...")
+    print("正在连接 The Odds API 获取全球赛事...")
     
-    # 我们请求 'upcoming'，这样不分联赛，只要是近期热门比赛都能抓到
-    # sport_key: 'soccer_epl' (英超), 'basketball_nba' (NBA), 
-    # 或者用 'upcoming' 获取所有
-    # 为了演示效果，我们先抓即将开始的比赛
-    
-    # 免费版 key 每月500次，为了省流，我们要珍惜请求次数
-    # 这里我们一次性请求即将开始的比赛
+    # 获取即将开始的比赛 (upcoming)
     url = f'https://api.the-odds-api.com/v4/sports/upcoming/odds/?apiKey={ODDS_API_KEY}&regions=uk&markets=h2h&oddsFormat=decimal'
     
     try:
         response = requests.get(url, timeout=20)
-        
-        # 额度监控
-        remaining = response.headers.get('x-requests-remaining', '未知')
-        print(f"API 请求建立。剩余额度: {remaining}")
-        
         if response.status_code != 200:
-            print(f"API 报错: {response.text}")
+            print(f"API 异常: {response.text}")
             return []
             
         raw_data = response.json()
-        print(f"成功获取 {len(raw_data)} 场即将开始的比赛数据。")
+        print(f"API 返回了 {len(raw_data)} 场比赛，正在筛选主流赛事...")
         
-        clean_matches = []
+        filtered_matches = []
         
-        # 数据清洗
         for item in raw_data:
-            sport_title = item.get('sport_title', 'Unknown League')
+            sport_title = item.get('sport_title', '')
+            
+            # --- 筛选逻辑 ---
+            # 检查联赛名是否包含我们定义的关键词之一
+            is_target = False
+            for keyword in TARGET_KEYWORDS:
+                if keyword in sport_title:
+                    is_target = True
+                    break
+            
+            if not is_target:
+                continue # 如果不是主流联赛，跳过
+            # ----------------
+            
             home_team = item.get('home_team')
             away_team = item.get('away_team')
             commence_time = item.get('commence_time')
             
-            # 过滤：我不想要太过冷门的比赛，你可以根据需要调整
-            # 比如只保留包含 "Soccer" 或 "Basketball" 的
-            if "Esports" in sport_title: 
-                continue
-
             # 提取赔率
-            # 逻辑：找到一家叫 'William Hill' 或 'Bet365' 或 'Unibet' 的公司
-            # 如果都没有，就取第一家
             bookmakers = item.get('bookmakers', [])
-            if not bookmakers:
+            if not bookmakers: 
                 continue
                 
-            selected_bookie = bookmakers[0] # 默认取第一家
+            # 优选主注公司
+            selected_bookie = bookmakers[0]
             for b in bookmakers:
-                if b['key'] in ['williamhill', 'bet365', 'unibet']:
+                if b['key'] in ['williamhill', 'bet365', 'unibet', 'pinnacle']:
                     selected_bookie = b
                     break
             
-            # 提取 h2h (Head to Head) 胜平负
             markets = selected_bookie.get('markets', [])
-            if not markets:
-                continue
-                
-            outcomes = markets[0].get('outcomes', [])
+            if not markets: continue
             
+            outcomes = markets[0].get('outcomes', [])
             odds_display = {"主胜": "-", "平": "-", "客胜": "-"}
             
             for out in outcomes:
                 price = out.get('price')
                 name = out.get('name')
-                
-                if name == home_team:
-                    odds_display['主胜'] = price
-                elif name == away_team:
-                    odds_display['客胜'] = price
-                elif name == 'Draw':
-                    odds_display['平'] = price
+                if name == home_team: odds_display['主胜'] = price
+                elif name == away_team: odds_display['客胜'] = price
+                elif name == 'Draw': odds_display['平'] = price
             
-            # 只有当赔率有效时才添加
-            clean_matches.append({
+            filtered_matches.append({
                 "league": sport_title,
                 "time": commence_time,
                 "home": home_team,
                 "away": away_team,
                 "odds": odds_display,
-                "bookie_name": selected_bookie['title']
+                "bookie": selected_bookie['title']
             })
             
-        return clean_matches
+        print(f"筛选完毕！共保留 {len(filtered_matches)} 场主流重点赛事。")
+        return filtered_matches
 
     except Exception as e:
-        print(f"数据获取异常: {e}")
+        print(f"数据获取严重错误: {e}")
         return []
 
-def search_news_safe(home, away):
+def search_news_detailed(home, away, league):
     """
-    安全版搜索，如果 DuckDuckGo 挂了不影响主程序
+    【核心升级2】针对伤病和名单的深度搜索
     """
-    print(f"正在搜索: {home} vs {away}...")
-    query = f"{home} vs {away} prediction injury news"
+    print(f"正在搜集情报: {home} vs {away}...")
+    
+    # 构造更精准的搜索词，包含 "injuries" (伤病) 和 "lineups" (阵容)
+    # 针对中文环境用户，我们可以让搜索词混合一点，但英文源通常更新更快
+    query = f"{home} vs {away} {league} injury news predicted lineups stats"
     
     try:
-        # 30秒超时机制
-        results = DDGS().text(query, max_results=2)
+        # 增加随机等待，模拟人类，防止被 DuckDuckGo 封锁
+        time.sleep(random.uniform(1.5, 3.5))
+        
+        results = DDGS().text(query, max_results=3) # 获取前3条新闻
         summary = ""
         if results:
             for r in results:
-                summary += f"Title: {r['title']}\nSnippet: {r['body']}\n"
-        return summary if summary else "No News Found."
+                summary += f"【Source: {r['title']}】\n{r['body']}\n"
+        else:
+            summary = "无具体网络伤病情报，仅基于历史实力分析。"
+            
+        return summary
         
     except Exception as e:
-        print(f"搜索失败(网络波动，已跳过): {e}")
-        return "Search Unavailable."
+        print(f"搜索触发反爬风控/超时，跳过: {e}")
+        return "网络搜索暂时不可用，模型将基于赔率和知识库预测。"
 
 def call_ai_predict(match_data, news_text):
     """
-    调用 Gemini 进行预测
+    Gemini 预测模块
     """
+    # 构造针对性 Prompt
     prompt = f"""
-    You are a professional sports analyst. 
-    Predict the match result based on the following data.
+    You are a professional football/basketball analyst (Expert Bettor).
     
-    【Match Info】
-    League: {match_data['league']}
-    Teams: {match_data['home']} (Home) vs {match_data['away']} (Away)
-    Time: {match_data['time']}
-    Odds ({match_data['bookie_name']}): {json.dumps(match_data['odds'])}
+    【Task】
+    Predict the match result based on Odds (Market Confidence) and News (Injuries/Lineups).
     
-    【News/Intel】
+    【Match Information】
+    - League: {match_data['league']}
+    - Match: {match_data['home']} (Home) vs {match_data['away']} (Away)
+    - Time (UTC): {match_data['time']}
+    - Live Odds ({match_data['bookie']}): {json.dumps(match_data['odds'])}
+    
+    【Intelligence (Injuries & Lineups)】
     {news_text}
     
-    【Requirements】
-    Please output valid JSON only. USE CHINESE for analysis.
-    Format:
+    【Instruction】
+    1. Analyze the implied probability from the odds (Low odds = High probability).
+    2. Consider any major injuries mentioned in the intelligence.
+    3. Output strictly in JSON.
+    
+    【Output JSON Format】
     {{
         "match": "{match_data['home']} vs {match_data['away']}",
         "league": "{match_data['league']}",
-        "prediction": "主胜/平/客胜",
-        "probability": "0-100%",
-        "reason": "Short analysis in Chinese (max 50 words)"
+        "prediction_result": "Home Win / Draw / Away Win (Choose one)",
+        "win_probability": "XX%",
+        "key_analysis": "Write a sharp analysis in CHINESE (中文). Mention key injuries if any.",
+        "risk_level": "High/Medium/Low"
     }}
     """
     
@@ -168,7 +184,7 @@ def call_ai_predict(match_data, news_text):
     payload = {
         "model": MODEL_NAME,
         "messages": [{"role": "user", "content": prompt}],
-        "temperature": 0.5
+        "temperature": 0.4 # 降低温度，让预测更保守稳定
     }
     
     try:
@@ -176,11 +192,10 @@ def call_ai_predict(match_data, news_text):
         if req.status_code == 200:
             res_json = req.json()
             content = res_json['choices'][0]['message']['content']
-            # 清洗 markdown
             clean = content.replace("```json", "").replace("```", "").strip()
             return json.loads(clean)
         else:
-            print(f"AI Error: {req.text}")
+            print(f"AI API Failed: {req.text}")
             return None
     except Exception as e:
         print(f"AI Timeout: {e}")
@@ -189,66 +204,60 @@ def call_ai_predict(match_data, news_text):
 # ================= 主程序 =================
 
 def main():
-    print("=== 任务开始 ===")
+    print("=== 全自动预测任务启动 (Mainstream Batch) ===")
     
-    # 1. 获取比赛
+    # 1. 获取并筛选比赛
     matches = get_odds_data()
     
     if not matches:
-        print("未获取到比赛数据 (列表为空)，结束。")
-        # 生成一个空的 JSON 提示用户
+        print("未找到符合条件的主流赛事。")
         with open("result.json", "w", encoding='utf-8') as f:
-            json.dump({"status": "No matches upcoming or API error"}, f)
+            json.dump({"status": "No mainstream matches found today"}, f)
         return
 
-    # 2. 选取前 3 场热门比赛 (避免超时)
-    # 这里的逻辑是：优先处理英超、NBA，如果没有，就取前3个
-    priority_matches = []
-    others = []
+    # 【重要】为了防止比赛非常多导致超时（GitHub Action限制6小时，但我们最好控制在10分钟内）
+    # 如果比赛超过 15 场，我们只取前 15 场（此时列表已经是我们想要的白名单赛事了）
+    # 15场 * 10秒/场 = 2.5分钟，非常安全
+    max_matches = 15
+    target_matches = matches[:max_matches]
     
-    for m in matches:
-        if "Soccer" in m['league'] or "NBA" in m['league']:
-            priority_matches.append(m)
+    print(f"今日主流赛事共 {len(matches)} 场，将处理前 {len(target_matches)} 场...")
+    
+    predictions = []
+    
+    # 2. 批量处理
+    for i, match in enumerate(target_matches):
+        print(f"\n--- 处理进度 [{i+1}/{len(target_matches)}] : {match['home']} vs {match['away']} ---")
+        
+        # A. 深度搜索
+        news = search_news_detailed(match['home'], match['away'], match['league'])
+        
+        # B. AI 预测
+        ai_res = call_ai_predict(match, news)
+        
+        if ai_res:
+            predictions.append(ai_res)
         else:
-            others.append(m)
+            print("该场次 AI 预测失败，跳过。")
             
-    # 合并列表，优先处理重点赛事
-    final_queue = priority_matches + others
-    # 截取前 3 场
-    target_matches = final_queue[:3]
-    
-    print(f"即将处理 {len(target_matches)} 场比赛预测...")
-    
-    results_list = []
-    
-    # 3. 循环预测
-    for match in target_matches:
-        # A. 搜新闻
-        news = search_news_safe(match['home'], match['away'])
-        
-        # B. 问 AI
-        print(f"AI 正在根据赔率和新闻分析: {match['home']} vs {match['away']}")
-        prediction = call_ai_predict(match, news)
-        
-        if prediction:
-            results_list.append(prediction)
-            
-        # C. 休息2秒
-        time.sleep(2)
+        # C. 随机长休眠 (非常重要！)
+        #为了不让 DDG 封IP，每处理完一场，休息 3-6 秒
+        sleep_time = random.uniform(3, 6)
+        print(f"冷却 {sleep_time:.1f} 秒...")
+        time.sleep(sleep_time)
 
-    # 4. 保存
+    # 3. 最终交付
     final_output = {
-        "update_time": datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC"),
-        "data_source_1": "The Odds API (Legit)",
-        "data_source_2": "DuckDuckGo Search",
-        "model": MODEL_NAME,
-        "predictions": results_list
+        "update_time_utc": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "total_matches_predicted": len(predictions),
+        "source": "Official Odds + Web Intelligence + Gemini",
+        "results": predictions
     }
     
     with open("result.json", "w", encoding='utf-8') as f:
         json.dump(final_output, f, ensure_ascii=False, indent=4)
         
-    print(f"=== 成功生成 {len(results_list)} 场预测结果，已保存 ===")
+    print(f"\n=== 任务全部完成，共生成 {len(predictions)} 场预测 ===")
 
 if __name__ == "__main__":
     main()

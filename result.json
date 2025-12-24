@@ -1,29 +1,47 @@
 {
-    "update_time": "2025-12-24 07:52:17 UTC",
-    "data_source_1": "The Odds API (Legit)",
-    "data_source_2": "DuckDuckGo Search",
-    "model": "gemini-3-pro-preview",
-    "predictions": [
-        {
-            "match": "New York Knicks vs Cleveland Cavaliers",
-            "league": "NBA",
-            "prediction": "主胜",
-            "probability": "70%",
-            "reason": "尼克斯坐拥麦迪逊主场优势，1.4的低赔率显示庄家对其信心十足。圣诞大战主队通常战意高昂，综合赔率与主场因素，看好尼克斯获胜。"
-        },
-        {
-            "match": "Adelaide 36ers vs Cairns Taipans",
-            "league": "NBL",
-            "prediction": "主胜",
-            "probability": "98%",
-            "reason": "主胜赔率低至1.02，暗示主队拥有压倒性优势，客队赔率高达15.0显示其实力差距巨大。结合主场之利，阿德莱德36人取胜几无悬念。"
-        },
+    "update_time_utc": "2025-12-24 08:06:38",
+    "total_matches_predicted": 5,
+    "source": "Official Odds + Web Intelligence + Gemini",
+    "results": [
         {
             "match": "Burkina Faso vs Equatorial Guinea",
             "league": "Africa Cup of Nations",
-            "prediction": "主胜",
-            "probability": "60%",
-            "reason": "布基纳法索整体阵容实力占优，且拥有多名五大联赛球星。威廉希尔开出1.83的主胜赔率，显示出对主队的明显支持，赤道几内亚爆冷难度较大。"
+            "prediction_result": "Home Win",
+            "win_probability": "55%",
+            "key_analysis": "从威廉希尔开出的赔率来看，主胜1.83对应的隐含胜率约为54%，显示市场对布基纳法索的实力给予了肯定支持。布基纳法索作为非洲传统劲旅，近年来在非洲杯中表现稳定，球员多效力于欧洲联赛，整体战术素养高于赤道几内亚。虽然赤道几内亚以防守反击著称，具备一定的爆冷属性，但客胜赔率高达5.0，说明庄家对其取胜信心极低。在缺乏具体伤病情报的情况下，依据硬实力和赔率倾向，布基纳法索更有希望控制比赛节奏并小胜对手。风险在于非洲杯赛事普遍进球较少，需警惕平局可能。",
+            "risk_level": "Medium"
+        },
+        {
+            "match": "Algeria vs Sudan",
+            "league": "Africa Cup of Nations",
+            "prediction_result": "Home Win",
+            "win_probability": "70%",
+            "key_analysis": "威廉希尔开出的1.36主胜赔率折射出阿尔及利亚（Algeria）巨大的实力优势，隐含胜率超过70%。作为非洲传统劲旅，阿尔及利亚拥有众多效力于欧洲五大联赛的球星，整体技战术素养远超苏丹（Sudan）。苏丹队主要依赖本土联赛球员，在对抗高强度压迫及客场作战（或中立场地）时往往显得吃力。虽然目前情报显示无具体核心球员伤病，但基于双方历史底蕴和纸面实力的显著差距，市场资金明显流向主队，阿尔及利亚掌控比赛并全取三分是大概率事件。",
+            "risk_level": "Low"
+        },
+        {
+            "match": "Ivory Coast vs Mozambique",
+            "league": "Africa Cup of Nations",
+            "prediction_result": "Home Win",
+            "win_probability": "75%",
+            "key_analysis": "从威廉希尔开出的赔率来看，主胜赔率低至1.30，隐含胜率接近77%，而客胜赔率高达11.0，市场对科特迪瓦的信心呈现一边倒态势。科特迪瓦作为非洲传统豪强，阵容中拥有大量效力于欧洲五大联赛的球星，整体实力和板凳深度远在莫桑比克之上。在没有具体主力伤缺情报的情况下，按正常实力对比，莫桑比克难以抵挡科特迪瓦的攻势，主胜打出几率极高。",
+            "risk_level": "Low"
+        },
+        {
+            "match": "Cameroon vs Gabon",
+            "league": "Africa Cup of Nations",
+            "prediction_result": "Home Win",
+            "win_probability": "45%",
+            "key_analysis": "从威廉希尔开出的赔率组合（2.2/2.8/3.6）来看，市场对喀麦隆给予了谨慎的支持。2.20的主胜赔率折算隐含概率约为45%，虽然优势存在但并不具备压倒性。值得注意的是，2.80的平赔在足球博彩中属于极低水位，这非常符合非洲杯（AFCON）赛事节奏紧凑、防守强硬、进球数较少的特点。喀麦隆作为非洲传统豪强（雄狮军团），在阵容厚度和大赛经验上历史上优于加蓬。在缺乏具体伤病名单的情况下，基于基本面判断，喀麦隆更有能力掌控比赛节奏。然而，考虑到加蓬坚韧的防守风格以及极低的平赔暗示，本场比赛极有可能是一场一球定胜负的闷战。首选主胜，但需警惕平局风险。",
+            "risk_level": "Medium"
+        },
+        {
+            "match": "New York Knicks vs Cleveland Cavaliers",
+            "league": "NBA",
+            "prediction_result": "Home Win",
+            "win_probability": "71%",
+            "key_analysis": "从威廉希尔开出的赔率来看，尼克斯主胜赔率低至1.40，隐含胜率超过70%，而骑士客胜高达2.90，庄家对主队信心十足。作为2025年圣诞大战的重头戏，麦迪逊广场花园（MSG）的主场氛围将提供巨大加成。在缺乏具体伤病情报的情况下，如此悬殊的赔率通常意味着尼克斯阵容更为齐整或近期状态明显优于骑士。市场资金明显倾向于看好尼克斯捍卫主场。",
+            "risk_level": "Low"
         }
     ]
 }

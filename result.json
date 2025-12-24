@@ -1,18 +1,29 @@
 {
-    "update_time": "2025-12-23 10:32:56",
-    "model_used": "gemini-3-pro-preview",
-    "results": [
+    "update_time": "2025-12-24 07:52:17 UTC",
+    "data_source_1": "The Odds API (Legit)",
+    "data_source_2": "DuckDuckGo Search",
+    "model": "gemini-3-pro-preview",
+    "predictions": [
         {
-            "match": "曼城 vs 西汉姆联",
-            "prediction_result": "主胜",
-            "win_probability": "85%",
-            "analysis": "根据盘口数据，曼城主胜赔率低至1.15，隐含胜率接近87%，显示出机构对主队的绝对支持。本场比赛为英超收官战，曼城坐拥主场之利且通常涉及争冠关键战役，战意达到顶峰。相比之下，西汉姆联客胜赔率高达15.0，且赛季末期往往缺乏实质性抢分动力。两队阵容深度与技战术水平存在巨大鸿沟，在没有关键伤病利空的情报下，曼城在伊蒂哈德球场的统治力难以被撼动，预测曼城将大概率掌控比赛节奏并顺利取胜。"
+            "match": "New York Knicks vs Cleveland Cavaliers",
+            "league": "NBA",
+            "prediction": "主胜",
+            "probability": "70%",
+            "reason": "尼克斯坐拥麦迪逊主场优势，1.4的低赔率显示庄家对其信心十足。圣诞大战主队通常战意高昂，综合赔率与主场因素，看好尼克斯获胜。"
         },
         {
-            "match": "上海海港 vs 成都蓉城",
-            "prediction_result": "主胜",
-            "win_probability": "60%",
-            "analysis": "从盘口数据分析，上海海港主胜赔率1.65对应的隐含胜率约为60%，在面对成都蓉城这类强队时，机构能给出低于1.70的赔率，显示出对主队极强的信心。上海海港作为卫冕冠军，进攻端拥有奥斯卡、武磊等核心，主场统治力在中超独一档。虽然成都蓉城球风硬朗，但客胜赔率高达4.5，且平赔3.8处于高位，显示市场并不看好客队能全身而退。结合海港近期火热的进攻状态与主场优势，本场比赛大概率由上海海港主场获胜。"
+            "match": "Adelaide 36ers vs Cairns Taipans",
+            "league": "NBL",
+            "prediction": "主胜",
+            "probability": "98%",
+            "reason": "主胜赔率低至1.02，暗示主队拥有压倒性优势，客队赔率高达15.0显示其实力差距巨大。结合主场之利，阿德莱德36人取胜几无悬念。"
+        },
+        {
+            "match": "Burkina Faso vs Equatorial Guinea",
+            "league": "Africa Cup of Nations",
+            "prediction": "主胜",
+            "probability": "60%",
+            "reason": "布基纳法索整体阵容实力占优，且拥有多名五大联赛球星。威廉希尔开出1.83的主胜赔率，显示出对主队的明显支持，赤道几内亚爆冷难度较大。"
         }
     ]
 }

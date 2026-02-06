@@ -1,28 +1,14 @@
 [
     {
-        "event_id": "9971650",
-        "start_time": "2026-02-06 16:30:00",
-        "league": "NBL",
-        "host_team": "Tasmania JackJumpers",
-        "visit_team": "Brisbane Bullets",
-        "num": "周五001",
-        "odds_3": "1.0",
-        "odds_1": "0.00",
-        "odds_0": "151.0",
-        "status": "未开始",
-        "ai_prediction": "分析中",
-        "ai_analysis": "数据获取超时，请关注临场指数变化。"
-    },
-    {
-        "event_id": "6959314",
-        "start_time": "2026-02-06 18:30:00",
+        "event_id": "3988691",
+        "start_time": "2026-02-06 18:35:00",
         "league": "NBL",
         "host_team": "Perth Wildcats",
         "visit_team": "Cairns Taipans",
-        "num": "周五002",
-        "odds_3": "1.02",
+        "num": "周五001",
+        "odds_3": "1.12",
         "odds_1": "0.00",
-        "odds_0": "14.0",
+        "odds_0": "5.75",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

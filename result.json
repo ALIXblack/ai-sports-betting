@@ -1,1 +1,30 @@
-[]
+[
+    {
+        "event_id": "2591937",
+        "start_time": "2026-02-07 01:30:00",
+        "league": "Bundesliga 2 - Germany",
+        "host_team": "Greuther Fürth",
+        "visit_team": "1. FC Magdeburg",
+        "num": "周六001",
+        "odds_3": "3.95",
+        "odds_1": "3.8",
+        "odds_0": "1.78",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6797944",
+        "start_time": "2026-02-07 01:30:00",
+        "league": "Bundesliga 2 - Germany",
+        "host_team": "SC Preußen Münster",
+        "visit_team": "VfL Bochum",
+        "num": "周六002",
+        "odds_3": "2.6",
+        "odds_1": "3.35",
+        "odds_0": "2.55",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

@@ -6,9 +6,9 @@
         "host_team": "Perth Wildcats",
         "visit_team": "Cairns Taipans",
         "num": "周五001",
-        "odds_3": "1.12",
+        "odds_3": "1.0",
         "odds_1": "0.00",
-        "odds_0": "5.75",
+        "odds_0": "19.0",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

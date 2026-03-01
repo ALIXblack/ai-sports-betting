@@ -6,9 +6,9 @@
         "host_team": "Dinamo Moscow",
         "visit_team": "Kryliya Sovetov",
         "num": "周日001",
-        "odds_3": "1.42",
-        "odds_1": "5.07",
-        "odds_0": "7.3",
+        "odds_3": "1.52",
+        "odds_1": "4.08",
+        "odds_0": "6.33",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"
@@ -51,6 +51,20 @@
         "odds_3": "1.93",
         "odds_1": "3.7",
         "odds_0": "3.5",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "7162798",
+        "start_time": "2026-03-01 20:30:00",
+        "league": "Bundesliga 2 - Germany",
+        "host_team": "Eintracht Braunschweig",
+        "visit_team": "SC Preußen Münster",
+        "num": "周日005",
+        "odds_3": "2.43",
+        "odds_1": "3.25",
+        "odds_0": "2.75",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

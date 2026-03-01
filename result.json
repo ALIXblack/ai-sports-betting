@@ -8,7 +8,7 @@
         "num": "周日001",
         "odds_3": "1.4",
         "odds_1": "5.26",
-        "odds_0": "7.5",
+        "odds_0": "7.49",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"
@@ -23,6 +23,34 @@
         "odds_3": "7.0",
         "odds_1": "4.33",
         "odds_0": "1.4",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "4839742",
+        "start_time": "2026-03-01 20:30:00",
+        "league": "Bundesliga 2 - Germany",
+        "host_team": "1. FC Magdeburg",
+        "visit_team": "Karlsruher SC",
+        "num": "周日003",
+        "odds_3": "1.68",
+        "odds_1": "4.2",
+        "odds_0": "4.1",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "7534255",
+        "start_time": "2026-03-01 20:30:00",
+        "league": "Bundesliga 2 - Germany",
+        "host_team": "Hertha Berlin",
+        "visit_team": "1. FC Nürnberg",
+        "num": "周日004",
+        "odds_3": "1.93",
+        "odds_1": "3.7",
+        "odds_0": "3.5",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

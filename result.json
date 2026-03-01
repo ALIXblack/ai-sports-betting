@@ -1,28 +1,28 @@
 [
     {
-        "event_id": "7764550",
-        "start_time": "2026-03-01 10:42:00",
-        "league": "NBA",
-        "host_team": "Utah Jazz",
-        "visit_team": "New Orleans Pelicans",
-        "num": "周日001",
-        "odds_3": "9.72",
-        "odds_1": "0.00",
-        "odds_0": "1.05",
-        "status": "未开始",
-        "ai_prediction": "分析中",
-        "ai_analysis": "数据获取超时，请关注临场指数变化。"
-    },
-    {
         "event_id": "2708442",
         "start_time": "2026-03-01 18:00:00",
         "league": "Premier League - Russia",
         "host_team": "Dinamo Moscow",
         "visit_team": "Kryliya Sovetov",
-        "num": "周日002",
+        "num": "周日001",
         "odds_3": "1.4",
         "odds_1": "5.26",
         "odds_0": "7.5",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "11919917",
+        "start_time": "2026-03-01 19:30:00",
+        "league": "Serie A - Italy",
+        "host_team": "Cremonese",
+        "visit_team": "AC Milan",
+        "num": "周日002",
+        "odds_3": "7.0",
+        "odds_1": "4.2",
+        "odds_0": "1.44",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

@@ -1,14 +1,14 @@
 [
     {
-        "event_id": "7068844",
-        "start_time": "2026-03-03 01:30:00",
+        "event_id": "10642340",
+        "start_time": "2026-03-03 01:32:00",
         "league": "Serie A - Italy",
         "host_team": "Pisa",
         "visit_team": "Bologna",
         "num": "周二001",
-        "odds_3": "4.0",
-        "odds_1": "3.2",
-        "odds_0": "1.95",
+        "odds_3": "4.4",
+        "odds_1": "3.04",
+        "odds_0": "1.99",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

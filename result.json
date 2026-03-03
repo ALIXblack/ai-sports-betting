@@ -1,14 +1,14 @@
 [
     {
-        "event_id": "10272560",
-        "start_time": "2026-03-04 03:45:00",
+        "event_id": "11462247",
+        "start_time": "2026-03-04 03:47:00",
         "league": "FA Cup",
         "host_team": "Port Vale",
         "visit_team": "Bristol City",
         "num": "周三001",
-        "odds_3": "4.2",
-        "odds_1": "3.5",
-        "odds_0": "1.75",
+        "odds_3": "4.0",
+        "odds_1": "2.25",
+        "odds_0": "2.55",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

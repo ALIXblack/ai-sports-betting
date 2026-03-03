@@ -1,1 +1,58 @@
-[]
+[
+    {
+        "event_id": "8295904",
+        "start_time": "2026-03-03 08:12:00",
+        "league": "NBA",
+        "host_team": "Washington Wizards",
+        "visit_team": "Houston Rockets",
+        "num": "周二001",
+        "odds_3": "10.96",
+        "odds_1": "0.00",
+        "odds_0": "1.03",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "3815296",
+        "start_time": "2026-03-03 08:41:00",
+        "league": "NBA",
+        "host_team": "Milwaukee Bucks",
+        "visit_team": "Boston Celtics",
+        "num": "周二002",
+        "odds_3": "10.96",
+        "odds_1": "0.00",
+        "odds_0": "1.03",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "7289356",
+        "start_time": "2026-03-03 10:12:00",
+        "league": "NBA",
+        "host_team": "Utah Jazz",
+        "visit_team": "Denver Nuggets",
+        "num": "周二003",
+        "odds_3": "5.41",
+        "odds_1": "0.00",
+        "odds_0": "1.15",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "9457114",
+        "start_time": "2026-03-03 11:10:00",
+        "league": "NBA",
+        "host_team": "Golden State Warriors",
+        "visit_team": "Los Angeles Clippers",
+        "num": "周二004",
+        "odds_3": "2.0",
+        "odds_1": "0.00",
+        "odds_0": "1.8",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

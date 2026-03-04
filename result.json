@@ -1,28 +1,14 @@
 [
     {
-        "event_id": "10469621",
-        "start_time": "2026-03-05 02:01:00",
-        "league": "La Liga - Spain",
-        "host_team": "Rayo Vallecano",
-        "visit_team": "Oviedo",
-        "num": "周四001",
-        "odds_3": "1.0",
-        "odds_1": "67.0",
-        "odds_0": "501.0",
-        "status": "未开始",
-        "ai_prediction": "分析中",
-        "ai_analysis": "数据获取超时，请关注临场指数变化。"
-    },
-    {
         "event_id": "9196421",
         "start_time": "2026-03-05 03:30:00",
         "league": "Bundesliga - Germany",
         "host_team": "Hamburger SV",
         "visit_team": "Bayer Leverkusen",
-        "num": "周四002",
-        "odds_3": "3.5",
-        "odds_1": "3.4",
-        "odds_0": "1.95",
+        "num": "周四001",
+        "odds_3": "4.58",
+        "odds_1": "2.67",
+        "odds_0": "2.14",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

@@ -1,25 +1,11 @@
 [
     {
-        "event_id": "9177065",
-        "start_time": "2026-03-05 11:41:00",
-        "league": "NBA",
-        "host_team": "Los Angeles Clippers",
-        "visit_team": "Indiana Pacers",
-        "num": "周四001",
-        "odds_3": "1.0",
-        "odds_1": "0.00",
-        "odds_0": "1.0",
-        "status": "未开始",
-        "ai_prediction": "分析中",
-        "ai_analysis": "数据获取超时，请关注临场指数变化。"
-    },
-    {
         "event_id": "2198551",
         "start_time": "2026-03-05 16:30:00",
         "league": "NBL",
         "host_team": "Melbourne United",
         "visit_team": "Tasmania JackJumpers",
-        "num": "周四002",
+        "num": "周四001",
         "odds_3": "1.29",
         "odds_1": "0.00",
         "odds_0": "3.6",

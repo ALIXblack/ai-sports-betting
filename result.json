@@ -1,1 +1,86 @@
-[]
+[
+    {
+        "event_id": "8082811",
+        "start_time": "2026-03-07 08:11:00",
+        "league": "NBA",
+        "host_team": "Charlotte Hornets",
+        "visit_team": "Miami Heat",
+        "num": "周六001",
+        "odds_3": "12.0",
+        "odds_1": "0.00",
+        "odds_0": "1.01",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "2704151",
+        "start_time": "2026-03-07 08:14:00",
+        "league": "NBA",
+        "host_team": "Boston Celtics",
+        "visit_team": "Dallas Mavericks",
+        "num": "周六002",
+        "odds_3": "1.0",
+        "odds_1": "0.00",
+        "odds_0": "1.0",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6871726",
+        "start_time": "2026-03-07 09:12:00",
+        "league": "NBA",
+        "host_team": "Houston Rockets",
+        "visit_team": "Portland Trail Blazers",
+        "num": "周六003",
+        "odds_3": "1.36",
+        "odds_1": "0.00",
+        "odds_0": "3.15",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "5682484",
+        "start_time": "2026-03-07 10:11:00",
+        "league": "NBA",
+        "host_team": "Denver Nuggets",
+        "visit_team": "New York Knicks",
+        "num": "周六004",
+        "odds_3": "1.8",
+        "odds_1": "0.00",
+        "odds_0": "2.0",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "2225890",
+        "start_time": "2026-03-07 10:11:00",
+        "league": "NBA",
+        "host_team": "Phoenix Suns",
+        "visit_team": "New Orleans Pelicans",
+        "num": "周六005",
+        "odds_3": "1.5",
+        "odds_1": "0.00",
+        "odds_0": "2.6",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "7150711",
+        "start_time": "2026-03-07 10:40:00",
+        "league": "NBA",
+        "host_team": "San Antonio Spurs",
+        "visit_team": "Los Angeles Clippers",
+        "num": "周六006",
+        "odds_3": "1.36",
+        "odds_1": "0.00",
+        "odds_0": "3.1",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

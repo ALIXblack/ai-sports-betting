@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "event_id": "4488426",
+        "start_time": "2026-04-02 07:10:00",
+        "league": "NBA",
+        "host_team": "Orlando Magic",
+        "visit_team": "Atlanta Hawks",
+        "num": "周四001",
+        "odds_3": "2.08",
+        "odds_1": "0.00",
+        "odds_0": "1.76",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "3253755",
+        "start_time": "2026-04-02 07:12:00",
+        "league": "NBA",
+        "host_team": "Washington Wizards",
+        "visit_team": "Philadelphia 76ers",
+        "num": "周四002",
+        "odds_3": "7.0",
+        "odds_1": "0.00",
+        "odds_0": "1.1",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "2072446",
+        "start_time": "2026-04-02 07:30:00",
+        "league": "NBA",
+        "host_team": "Miami Heat",
+        "visit_team": "Boston Celtics",
+        "num": "周四003",
+        "odds_3": "2.6",
+        "odds_1": "0.00",
+        "odds_0": "1.5",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

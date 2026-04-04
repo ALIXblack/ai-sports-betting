@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "event_id": "7458063",
+        "start_time": "2026-04-04 18:00:00",
+        "league": "Premier League - Russia",
+        "host_team": "FC Akron Tolyatti",
+        "visit_team": "CSKA Moscow",
+        "num": "周六001",
+        "odds_3": "4.47",
+        "odds_1": "4.25",
+        "odds_0": "1.73",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

@@ -1,14 +1,14 @@
 [
     {
-        "event_id": "5269373",
-        "start_time": "2026-04-06 18:30:00",
+        "event_id": "6710705",
+        "start_time": "2026-04-06 21:00:00",
         "league": "Serie A - Italy",
-        "host_team": "Udinese",
-        "visit_team": "Como",
+        "host_team": "Lecce",
+        "visit_team": "Atalanta BC",
         "num": "周一001",
-        "odds_3": "4.88",
-        "odds_1": "2.14",
-        "odds_0": "2.58",
+        "odds_3": "5.0",
+        "odds_1": "3.2",
+        "odds_0": "1.77",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

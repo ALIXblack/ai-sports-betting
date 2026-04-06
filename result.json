@@ -1,1 +1,30 @@
-[]
+[
+    {
+        "event_id": "10157756",
+        "start_time": "2026-04-07 07:10:00",
+        "league": "NBA",
+        "host_team": "Atlanta Hawks",
+        "visit_team": "New York Knicks",
+        "num": "周二001",
+        "odds_3": "1.8",
+        "odds_1": "0.00",
+        "odds_0": "2.0",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6732550",
+        "start_time": "2026-04-07 07:10:00",
+        "league": "NBA",
+        "host_team": "Orlando Magic",
+        "visit_team": "Detroit Pistons",
+        "num": "周二002",
+        "odds_3": "2.06",
+        "odds_1": "0.00",
+        "odds_0": "1.78",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

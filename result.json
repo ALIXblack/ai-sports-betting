@@ -1,1 +1,58 @@
-[]
+[
+    {
+        "event_id": "2994733",
+        "start_time": "2026-04-08 07:10:00",
+        "league": "NBA",
+        "host_team": "Indiana Pacers",
+        "visit_team": "Minnesota Timberwolves",
+        "num": "周三001",
+        "odds_3": "8.5",
+        "odds_1": "0.00",
+        "odds_0": "1.07",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6316971",
+        "start_time": "2026-04-08 07:11:00",
+        "league": "NBA",
+        "host_team": "Washington Wizards",
+        "visit_team": "Chicago Bulls",
+        "num": "周三002",
+        "odds_3": "10.5",
+        "odds_1": "0.00",
+        "odds_0": "1.05",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "3871320",
+        "start_time": "2026-04-08 07:41:00",
+        "league": "NBA",
+        "host_team": "Brooklyn Nets",
+        "visit_team": "Milwaukee Bucks",
+        "num": "周三003",
+        "odds_3": "2.1",
+        "odds_1": "0.00",
+        "odds_0": "1.73",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6166775",
+        "start_time": "2026-04-08 07:42:00",
+        "league": "NBA",
+        "host_team": "Toronto Raptors",
+        "visit_team": "Miami Heat",
+        "num": "周三004",
+        "odds_3": "1.73",
+        "odds_1": "0.00",
+        "odds_0": "2.1",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

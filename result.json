@@ -1,16 +1,1 @@
-[
-    {
-        "event_id": "8811863",
-        "start_time": "2026-04-07 09:10:00",
-        "league": "NBA",
-        "host_team": "Denver Nuggets",
-        "visit_team": "Portland Trail Blazers",
-        "num": "周二001",
-        "odds_3": "4.75",
-        "odds_1": "0.00",
-        "odds_0": "1.19",
-        "status": "未开始",
-        "ai_prediction": "分析中",
-        "ai_analysis": "数据获取超时，请关注临场指数变化。"
-    }
-]
+[]

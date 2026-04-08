@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "event_id": "11472907",
+        "start_time": "2026-04-09 00:45:00",
+        "league": "UEFA Europa League",
+        "host_team": "SC Braga",
+        "visit_team": "Real Betis",
+        "num": "周四001",
+        "odds_3": "1.49",
+        "odds_1": "3.7",
+        "odds_0": "8.19",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

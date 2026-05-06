@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "event_id": "8063572",
+        "start_time": "2026-05-07 00:00:00",
+        "league": "Frauen-Bundesliga",
+        "host_team": "Bayern Munich",
+        "visit_team": "TSG Hoffenheim",
+        "num": "周四001",
+        "odds_3": "2.17",
+        "odds_1": "3.05",
+        "odds_0": "3.1",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

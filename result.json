@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "event_id": "10593522",
+        "start_time": "2026-05-09 07:12:00",
+        "league": "NBA",
+        "host_team": "Philadelphia 76ers",
+        "visit_team": "New York Knicks",
+        "num": "周六001",
+        "odds_3": "2.17",
+        "odds_1": "0.00",
+        "odds_0": "1.68",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "2046543",
+        "start_time": "2026-05-09 07:33:43",
+        "league": "WNBA",
+        "host_team": "New York Liberty",
+        "visit_team": "Connecticut Sun",
+        "num": "周六002",
+        "odds_3": "1.02",
+        "odds_1": "0.00",
+        "odds_0": "1.1",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "2678643",
+        "start_time": "2026-05-09 07:34:15",
+        "league": "WNBA",
+        "host_team": "Toronto Tempo",
+        "visit_team": "Washington Mystics",
+        "num": "周六003",
+        "odds_3": "2.08",
+        "odds_1": "0.00",
+        "odds_0": "1.7",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

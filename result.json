@@ -1,1 +1,30 @@
-[]
+[
+    {
+        "event_id": "11672189",
+        "start_time": "2026-06-04 07:39:00",
+        "league": "WNBA",
+        "host_team": "New York Liberty",
+        "visit_team": "Toronto Tempo",
+        "num": "周四001",
+        "odds_3": "1.24",
+        "odds_1": "0.00",
+        "odds_0": "3.85",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "3882558",
+        "start_time": "2026-06-04 08:30:00",
+        "league": "NBA",
+        "host_team": "San Antonio Spurs",
+        "visit_team": "New York Knicks",
+        "num": "周四002",
+        "odds_3": "1.52",
+        "odds_1": "0.00",
+        "odds_0": "2.6",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

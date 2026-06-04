@@ -1,1 +1,30 @@
-[]
+[
+    {
+        "event_id": "6296999",
+        "start_time": "2026-06-05 01:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "HSV Hamburg",
+        "visit_team": "HSG Wetzlar",
+        "num": "周五001",
+        "odds_3": "1.77",
+        "odds_1": "8.0",
+        "odds_0": "2.55",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "2078880",
+        "start_time": "2026-06-05 01:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "SG Flensburg-Handewitt",
+        "visit_team": "ThSV Eisenach",
+        "num": "周五002",
+        "odds_3": "1.11",
+        "odds_1": "14.0",
+        "odds_0": "8.0",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

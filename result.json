@@ -1,1 +1,86 @@
-[]
+[
+    {
+        "event_id": "2914436",
+        "start_time": "2026-06-07 21:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "Bergischer HC",
+        "visit_team": "Frisch Auf Göppingen",
+        "num": "周日001",
+        "odds_3": "2.32",
+        "odds_1": "8.0",
+        "odds_0": "1.92",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6036133",
+        "start_time": "2026-06-07 21:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "Füchse Berlin",
+        "visit_team": "SG Flensburg-Handewitt",
+        "num": "周日002",
+        "odds_3": "1.37",
+        "odds_1": "9.5",
+        "odds_0": "3.95",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "4942194",
+        "start_time": "2026-06-07 21:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "SC DHfK Leipzig",
+        "visit_team": "GWD Minden",
+        "num": "周日003",
+        "odds_3": "2.65",
+        "odds_1": "8.5",
+        "odds_0": "1.7",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "10035590",
+        "start_time": "2026-06-07 21:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "TVB Stuttgart",
+        "visit_team": "HC Erlangen",
+        "num": "周日004",
+        "odds_3": "1.45",
+        "odds_1": "9.0",
+        "odds_0": "3.5",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "4809099",
+        "start_time": "2026-06-07 21:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "HSG Wetzlar",
+        "visit_team": "SC Magdeburg",
+        "num": "周日005",
+        "odds_3": "5.1",
+        "odds_1": "11.0",
+        "odds_0": "1.25",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "3159041",
+        "start_time": "2026-06-07 21:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "ThSV Eisenach",
+        "visit_team": "HSV Hamburg",
+        "num": "周日006",
+        "odds_3": "1.67",
+        "odds_1": "8.5",
+        "odds_0": "2.7",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

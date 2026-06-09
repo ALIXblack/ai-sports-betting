@@ -1,1 +1,30 @@
-[]
+[
+    {
+        "event_id": "10766293",
+        "start_time": "2026-06-10 07:04:21",
+        "league": "WNBA",
+        "host_team": "Chicago Sky",
+        "visit_team": "Atlanta Dream",
+        "num": "周三001",
+        "odds_3": "4.0",
+        "odds_1": "0.00",
+        "odds_0": "1.23",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "7536400",
+        "start_time": "2026-06-10 08:10:00",
+        "league": "WNBA",
+        "host_team": "Minnesota Lynx",
+        "visit_team": "Dallas Wings",
+        "num": "周三002",
+        "odds_3": "1.51",
+        "odds_1": "0.00",
+        "odds_0": "2.55",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

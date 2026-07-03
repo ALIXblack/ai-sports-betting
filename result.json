@@ -1,1 +1,30 @@
-[]
+[
+    {
+        "event_id": "9595386",
+        "start_time": "2026-07-04 07:40:00",
+        "league": "WNBA",
+        "host_team": "New York Liberty",
+        "visit_team": "Minnesota Lynx",
+        "num": "周六001",
+        "odds_3": "2.08",
+        "odds_1": "0.00",
+        "odds_0": "1.76",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "10543919",
+        "start_time": "2026-07-04 08:00:00",
+        "league": "NBA Summer League",
+        "host_team": "San Antonio Spurs",
+        "visit_team": "Miami Heat",
+        "num": "周六002",
+        "odds_3": "1.88",
+        "odds_1": "0.00",
+        "odds_0": "1.94",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

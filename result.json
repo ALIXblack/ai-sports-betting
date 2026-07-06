@@ -1,14 +1,14 @@
 [
     {
-        "event_id": "6603853",
-        "start_time": "2026-07-06 07:02:00",
-        "league": "WNBA",
-        "host_team": "Las Vegas Aces",
-        "visit_team": "Indiana Fever",
-        "num": "周一001",
-        "odds_3": "1.89",
+        "event_id": "4823554",
+        "start_time": "2026-07-05 22:00:00",
+        "league": "NBA Summer League",
+        "host_team": "Golden State Warriors Gold",
+        "visit_team": "Miami Heat",
+        "num": "周日001",
+        "odds_3": "1.52",
         "odds_1": "0.00",
-        "odds_0": "1.88",
+        "odds_0": "2.56",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

@@ -12,5 +12,33 @@
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "2247973",
+        "start_time": "2026-07-07 07:30:00",
+        "league": "NBA Summer League",
+        "host_team": "San Antonio Spurs",
+        "visit_team": "Los Angeles Lakers",
+        "num": "周二002",
+        "odds_3": "1.7",
+        "odds_1": "0.00",
+        "odds_0": "2.16",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "3766478",
+        "start_time": "2026-07-07 07:40:00",
+        "league": "WNBA",
+        "host_team": "Washington Mystics",
+        "visit_team": "Golden State Valkyries",
+        "num": "周二003",
+        "odds_3": "2.88",
+        "odds_1": "0.00",
+        "odds_0": "1.43",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
     }
 ]

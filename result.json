@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "event_id": "11462824",
+        "start_time": "2026-07-07 07:00:00",
+        "league": "NBA Summer League",
+        "host_team": "Oklahoma City Thunder",
+        "visit_team": "Atlanta Hawks",
+        "num": "周二001",
+        "odds_3": "2.32",
+        "odds_1": "0.00",
+        "odds_0": "1.62",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

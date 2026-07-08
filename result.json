@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "event_id": "6130935",
+        "start_time": "2026-07-08 07:02:33",
+        "league": "NBA Summer League",
+        "host_team": "Memphis Grizzlies",
+        "visit_team": "Atlanta Hawks",
+        "num": "周三001",
+        "odds_3": "4.37",
+        "odds_1": "0.00",
+        "odds_0": "1.22",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "8565511",
+        "start_time": "2026-07-08 08:05:00",
+        "league": "WNBA",
+        "host_team": "New York Liberty",
+        "visit_team": "Dallas Wings",
+        "num": "周三002",
+        "odds_3": "1.5",
+        "odds_1": "0.00",
+        "odds_0": "2.6",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "11988611",
+        "start_time": "2026-07-08 09:00:00",
+        "league": "NBA Summer League",
+        "host_team": "Utah Jazz",
+        "visit_team": "Oklahoma City Thunder",
+        "num": "周三003",
+        "odds_3": "1.67",
+        "odds_1": "0.00",
+        "odds_0": "2.22",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

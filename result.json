@@ -1,1 +1,58 @@
-[]
+[
+    {
+        "event_id": "11970623",
+        "start_time": "2026-07-11 04:00:00",
+        "league": "NBA Summer League",
+        "host_team": "Miami Heat",
+        "visit_team": "Milwaukee Bucks",
+        "num": "周六001",
+        "odds_3": "2.96",
+        "odds_1": "0.00",
+        "odds_0": "1.4",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "9642361",
+        "start_time": "2026-07-11 04:30:00",
+        "league": "NBA Summer League",
+        "host_team": "Indiana Pacers",
+        "visit_team": "Cleveland Cavaliers",
+        "num": "周六002",
+        "odds_3": "2.89",
+        "odds_1": "0.00",
+        "odds_0": "1.41",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "4676319",
+        "start_time": "2026-07-11 06:00:00",
+        "league": "NBA Summer League",
+        "host_team": "New York Knicks",
+        "visit_team": "Brooklyn Nets",
+        "num": "周六003",
+        "odds_3": "3.51",
+        "odds_1": "0.00",
+        "odds_0": "1.29",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "7121529",
+        "start_time": "2026-07-11 06:30:00",
+        "league": "NBA Summer League",
+        "host_team": "Denver Nuggets",
+        "visit_team": "Houston Rockets",
+        "num": "周六004",
+        "odds_3": "2.13",
+        "odds_1": "0.00",
+        "odds_0": "1.73",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

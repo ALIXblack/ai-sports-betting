@@ -6,9 +6,9 @@
         "host_team": "KuPS Kuopio",
         "visit_team": "FK Vardar",
         "num": "周二001",
-        "odds_3": "1.55",
-        "odds_1": "4.1",
-        "odds_0": "5.25",
+        "odds_3": "1.49",
+        "odds_1": "4.3",
+        "odds_0": "5.75",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"
@@ -93,6 +93,20 @@
         "odds_3": "1.35",
         "odds_1": "4.5",
         "odds_0": "9.0",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "10110405",
+        "start_time": "2026-07-15 01:30:00",
+        "league": "UEFA Champions League Qualification",
+        "host_team": "The New Saints FC",
+        "visit_team": "Sabah FK",
+        "num": "周三008",
+        "odds_3": "5.1",
+        "odds_1": "4.0",
+        "odds_0": "1.57",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

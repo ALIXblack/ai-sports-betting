@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "event_id": "3569331",
+        "start_time": "2026-08-02 21:00:00",
+        "league": "Premier League - Russia",
+        "host_team": "Gazovik Orenburg",
+        "visit_team": "Zenit St Petersburg",
+        "num": "周日001",
+        "odds_3": "9.48",
+        "odds_1": "5.46",
+        "odds_0": "1.33",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

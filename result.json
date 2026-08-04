@@ -1,1 +1,30 @@
-[]
+[
+    {
+        "event_id": "6363272",
+        "start_time": "2026-08-05 00:00:00",
+        "league": "UEFA Champions League Qualification",
+        "host_team": "FC Ararat-Armenia",
+        "visit_team": "NK Celje",
+        "num": "周三001",
+        "odds_3": "2.7",
+        "odds_1": "3.25",
+        "odds_0": "2.48",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6256619",
+        "start_time": "2026-08-05 00:00:00",
+        "league": "UEFA Champions League Qualification",
+        "host_team": "Mjällby AIF",
+        "visit_team": "ŠK Slovan Bratislava",
+        "num": "周三002",
+        "odds_3": "1.97",
+        "odds_1": "3.55",
+        "odds_0": "3.5",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

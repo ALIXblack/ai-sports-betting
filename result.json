@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "event_id": "9606187",
+        "start_time": "2026-08-07 07:06:00",
+        "league": "WNBA",
+        "host_team": "Indiana Fever",
+        "visit_team": "Las Vegas Aces",
+        "num": "周五001",
+        "odds_3": "8.5",
+        "odds_1": "0.00",
+        "odds_0": "1.06",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "11285236",
+        "start_time": "2026-08-07 09:00:00",
+        "league": "WNBA",
+        "host_team": "Minnesota Lynx",
+        "visit_team": "Los Angeles Sparks",
+        "num": "周五002",
+        "odds_3": "1.07",
+        "odds_1": "0.00",
+        "odds_0": "10.18",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "9006359",
+        "start_time": "2026-08-07 10:00:00",
+        "league": "WNBA",
+        "host_team": "Portland Fire",
+        "visit_team": "Toronto Tempo",
+        "num": "周五003",
+        "odds_3": "1.71",
+        "odds_1": "0.00",
+        "odds_0": "2.16",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

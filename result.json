@@ -6,9 +6,9 @@
         "host_team": "FC Fakel Voronezh",
         "visit_team": "FC Akhmat Grozny",
         "num": "周二001",
-        "odds_3": "3.15",
-        "odds_1": "3.39",
-        "odds_0": "2.38",
+        "odds_3": "3.14",
+        "odds_1": "3.37",
+        "odds_0": "2.39",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"
@@ -22,7 +22,7 @@
         "num": "周二002",
         "odds_3": "1.4",
         "odds_1": "4.5",
-        "odds_0": "6.0",
+        "odds_0": "6.5",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

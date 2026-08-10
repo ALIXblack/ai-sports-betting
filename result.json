@@ -1,14 +1,14 @@
 [
     {
-        "event_id": "9791906",
-        "start_time": "2026-08-10 07:04:00",
-        "league": "WNBA",
-        "host_team": "Los Angeles Sparks",
-        "visit_team": "Golden State Valkyries",
-        "num": "周一001",
-        "odds_3": "5.8",
-        "odds_1": "0.00",
-        "odds_0": "1.13",
+        "event_id": "5038369",
+        "start_time": "2026-08-11 00:30:00",
+        "league": "Premier League - Russia",
+        "host_team": "FC Fakel Voronezh",
+        "visit_team": "FC Akhmat Grozny",
+        "num": "周二001",
+        "odds_3": "3.37",
+        "odds_1": "3.32",
+        "odds_0": "2.27",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"

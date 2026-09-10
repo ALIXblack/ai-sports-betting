@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "event_id": "3166178",
+        "start_time": "2026-09-11 00:45:00",
+        "league": "UEFA Champions League",
+        "host_team": "Fenerbahce",
+        "visit_team": "AS Roma",
+        "num": "周五001",
+        "odds_3": "3.68",
+        "odds_1": "3.66",
+        "odds_0": "2.07",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6540229",
+        "start_time": "2026-09-11 00:45:00",
+        "league": "UEFA Champions League",
+        "host_team": "PSV Eindhoven",
+        "visit_team": "Shakhtar Donetsk",
+        "num": "周五002",
+        "odds_3": "1.52",
+        "odds_1": "4.75",
+        "odds_0": "6.01",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6492949",
+        "start_time": "2026-09-11 01:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "ThSV Eisenach",
+        "visit_team": "SG BBM Bietigheim",
+        "num": "周五003",
+        "odds_3": "1.58",
+        "odds_1": "10.0",
+        "odds_0": "2.88",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

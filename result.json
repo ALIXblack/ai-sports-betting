@@ -1,1 +1,72 @@
-[]
+[
+    {
+        "event_id": "7467127",
+        "start_time": "2026-09-13 19:30:00",
+        "league": "Bundesliga 2 - Germany",
+        "host_team": "1. FC Heidenheim",
+        "visit_team": "Holstein Kiel",
+        "num": "周日001",
+        "odds_3": "2.1",
+        "odds_1": "3.8",
+        "odds_0": "3.05",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "8844723",
+        "start_time": "2026-09-13 19:30:00",
+        "league": "Premier League - Russia",
+        "host_team": "FC Akhmat Grozny",
+        "visit_team": "FC Dynamo Makhachkala",
+        "num": "周日002",
+        "odds_3": "2.08",
+        "odds_1": "3.43",
+        "odds_0": "3.82",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "6347567",
+        "start_time": "2026-09-13 19:30:00",
+        "league": "Bundesliga 2 - Germany",
+        "host_team": "Karlsruher SC",
+        "visit_team": "FC Energie Cottbus",
+        "num": "周日003",
+        "odds_3": "1.84",
+        "odds_1": "4.1",
+        "odds_0": "3.6",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "2234044",
+        "start_time": "2026-09-13 19:30:00",
+        "league": "Bundesliga 2 - Germany",
+        "host_team": "VfL Osnabrück",
+        "visit_team": "Hertha Berlin",
+        "num": "周日004",
+        "odds_3": "3.25",
+        "odds_1": "3.9",
+        "odds_0": "2.0",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "9928634",
+        "start_time": "2026-09-13 20:00:00",
+        "league": "La Liga 2 - Spain",
+        "host_team": "Sporting Gijón",
+        "visit_team": "CD Eldense",
+        "num": "周日005",
+        "odds_3": "1.7",
+        "odds_1": "3.6",
+        "odds_0": "5.0",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

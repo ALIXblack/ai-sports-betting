@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "event_id": "10734063",
+        "start_time": "2026-09-15 00:00:00",
+        "league": "Frauen-Bundesliga",
+        "host_team": "Bayer Leverkusen",
+        "visit_team": "Bayern Munich",
+        "num": "周二001",
+        "odds_3": "7.43",
+        "odds_1": "4.99",
+        "odds_0": "1.31",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "3133870",
+        "start_time": "2026-09-15 00:30:00",
+        "league": "Serie A - Italy",
+        "host_team": "Torino",
+        "visit_team": "AS Roma",
+        "num": "周二002",
+        "odds_3": "5.75",
+        "odds_1": "3.95",
+        "odds_0": "1.52",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "11388202",
+        "start_time": "2026-09-15 00:30:00",
+        "league": "Serie A - Italy",
+        "host_team": "Como",
+        "visit_team": "Parma",
+        "num": "周二003",
+        "odds_3": "1.19",
+        "odds_1": "6.25",
+        "odds_0": "12.5",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

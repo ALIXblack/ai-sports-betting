@@ -1,1 +1,30 @@
-[]
+[
+    {
+        "event_id": "6856629",
+        "start_time": "2026-09-16 23:30:00",
+        "league": "Premier League - Russia",
+        "host_team": "Spartak Moscow",
+        "visit_team": "FC Fakel Voronezh",
+        "num": "周三001",
+        "odds_3": "1.37",
+        "odds_1": "5.15",
+        "odds_0": "8.86",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "10478840",
+        "start_time": "2026-09-16 23:30:00",
+        "league": "Premier League - Russia",
+        "host_team": "Rodina Moscow",
+        "visit_team": "Rubin Kazan",
+        "num": "周三002",
+        "odds_3": "3.53",
+        "odds_1": "3.35",
+        "odds_0": "2.22",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

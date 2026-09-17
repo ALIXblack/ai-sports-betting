@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "event_id": "9455366",
+        "start_time": "2026-09-17 21:15:00",
+        "league": "Premier League - Russia",
+        "host_team": "Gazovik Orenburg",
+        "visit_team": "FC Krasnodar",
+        "num": "周四001",
+        "odds_3": "5.21",
+        "odds_1": "4.31",
+        "odds_0": "1.63",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "8440629",
+        "start_time": "2026-09-17 23:30:00",
+        "league": "Premier League - Russia",
+        "host_team": "FK Rostov",
+        "visit_team": "Dinamo Moscow",
+        "num": "周四002",
+        "odds_3": "3.43",
+        "odds_1": "3.45",
+        "odds_0": "2.21",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "7683801",
+        "start_time": "2026-09-17 23:30:00",
+        "league": "Premier League - Russia",
+        "host_team": "FC Akron Tolyatti",
+        "visit_team": "FC Akhmat Grozny",
+        "num": "周四003",
+        "odds_3": "3.17",
+        "odds_1": "3.45",
+        "odds_0": "2.34",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

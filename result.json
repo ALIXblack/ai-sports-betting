@@ -1,1 +1,44 @@
-[]
+[
+    {
+        "event_id": "8488573",
+        "start_time": "2026-10-02 00:45:00",
+        "league": "UEFA Champions League Women",
+        "host_team": "Austria Wien",
+        "visit_team": "Inter Milan",
+        "num": "周五001",
+        "odds_3": "3.92",
+        "odds_1": "3.95",
+        "odds_0": "1.8",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "3993811",
+        "start_time": "2026-10-02 00:45:00",
+        "league": "UEFA Champions League Women",
+        "host_team": "HB Køge",
+        "visit_team": "Servette FC",
+        "num": "周五002",
+        "odds_3": "1.27",
+        "odds_1": "5.62",
+        "odds_0": "10.07",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    },
+    {
+        "event_id": "4873750",
+        "start_time": "2026-10-02 01:00:00",
+        "league": "Handball-Bundesliga",
+        "host_team": "TBV Lemgo",
+        "visit_team": "HSV Hamburg",
+        "num": "周五003",
+        "odds_3": "1.38",
+        "odds_1": "10.5",
+        "odds_0": "3.8",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

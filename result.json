@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "event_id": "8730047",
+        "start_time": "2026-10-08 07:00:00",
+        "league": "NBA Preseason",
+        "host_team": "Indiana Pacers",
+        "visit_team": "Minnesota Timberwolves",
+        "num": "周四001",
+        "odds_3": "2.28",
+        "odds_1": "0.00",
+        "odds_0": "1.64",
+        "status": "未开始",
+        "ai_prediction": "分析中",
+        "ai_analysis": "数据获取超时，请关注临场指数变化。"
+    }
+]

@@ -1,14 +1,14 @@
 [
     {
-        "event_id": "3382477",
-        "start_time": "2026-10-09 01:00:00",
-        "league": "Handball-Bundesliga",
-        "host_team": "TVB Stuttgart",
-        "visit_team": "HSG Wetzlar",
+        "event_id": "6281334",
+        "start_time": "2026-10-09 07:00:00",
+        "league": "NBA Preseason",
+        "host_team": "Cleveland Cavaliers",
+        "visit_team": "Boston Celtics",
         "num": "周五001",
-        "odds_3": "1.38",
-        "odds_1": "10.5",
-        "odds_0": "3.8",
+        "odds_3": "2.27",
+        "odds_1": "0.00",
+        "odds_0": "1.65",
         "status": "未开始",
         "ai_prediction": "分析中",
         "ai_analysis": "数据获取超时，请关注临场指数变化。"
